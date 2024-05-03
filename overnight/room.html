@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css"
+  />
+</head>
+<body>
+    <main>
+    <h1>Overnight Cost Estimator</h1>
+    <form id="reservationForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required><br><br>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required><br><br>
+      <label for="checkInDate">Check-in Date:</label>
+      <input type="date" id="checkInDate" name="checkInDate" required><br><br>
+      <label for="numNights">Number of Nights:</label>
+      <select id="numNights" name="numNights" required>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        <option value="25">25</option>
+        <option value="26">26</option>
+        <option value="27">27</option>
+        <option value="28">28</option>
+      </select><br><br>
+      <label for="roomType">Room Type:</label>
+      <div id="roomTypeDiv">
+        <input type="radio" id="queen" name="roomType" value="Queen" required>
+        <label for="queen">Queen</label><br>
+        <input type="radio" id="king" name="roomType" value="King">
+        <label for="king">King</label><br>
+        <input type="radio" id="twoBedroomSuite" name="roomType" value="2-Bedroom Suite">
+        <label for="twoBedroomSuite">2-Bedroom Suite</label><br>
+      </div>
+      <label for="maxOccupancy">Max Occupancy:</label>
+      <div id="maxOccupancyDiv">
+        <select id="queenMaxOccupancy" name="maxOccupancy">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+        <select id="kingMaxOccupancy" name="maxOccupancy">
+          <option value="1">1</option>
+          <option value="2">2</option>
+        </select>
+        <select id="twoBedroomSuiteMaxOccupancy" name="maxOccupancy">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </main>
+</body>
+</html>
