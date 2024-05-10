@@ -1,82 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css"
-  />
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Room Bookings</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css"/>
+  </head>
+  <body>
     <main>
-    <h1>Overnight Cost Estimator</h1>
-    <form id="reservationForm">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required><br><br>
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required><br><br>
-      <label for="checkInDate">Check-in Date:</label>
-      <input type="date" id="checkInDate" name="checkInDate" required><br><br>
-      <label for="numNights">Number of Nights:</label>
-      <select id="numNights" name="numNights" required>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-        <option value="10">10</option>
-        <option value="11">11</option>
-        <option value="12">12</option>
-        <option value="13">13</option>
-        <option value="14">14</option>
-        <option value="15">15</option>
-        <option value="16">16</option>
-        <option value="17">17</option>
-        <option value="18">18</option>
-        <option value="19">19</option>
-        <option value="20">20</option>
-        <option value="21">21</option>
-        <option value="22">22</option>
-        <option value="23">23</option>
-        <option value="24">24</option>
-        <option value="25">25</option>
-        <option value="26">26</option>
-        <option value="27">27</option>
-        <option value="28">28</option>
-      </select><br><br>
-      <label for="roomType">Room Type:</label>
-      <div id="roomTypeDiv">
-        <input type="radio" id="queen" name="roomType" value="Queen" required>
-        <label for="queen">Queen</label><br>
-        <input type="radio" id="king" name="roomType" value="King">
-        <label for="king">King</label><br>
-        <input type="radio" id="twoBedroomSuite" name="roomType" value="2-Bedroom Suite">
-        <label for="twoBedroomSuite">2-Bedroom Suite</label><br>
-      </div>
-      <label for="maxOccupancy">Max Occupancy:</label>
-      <div id="maxOccupancyDiv">
-        <select id="queenMaxOccupancy" name="maxOccupancy">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-        </select>
-        <select id="kingMaxOccupancy" name="maxOccupancy">
-          <option value="1">1</option>
-          <option value="2">2</option>
-        </select>
-        <select id="twoBedroomSuiteMaxOccupancy" name="maxOccupancy">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-        </main>
-</body>
+      <article>
+        <h3>Room Booking</h3>
+        <form class="bookInfo">
+          <label for="nameInput">Name</label>
+          <input type="text" id="nameInput" name="customerName" />
+          <label for="emailInput">Email address</label>
+          <input type="email" id="emailInput" name="customerEmail" />
+          <label for="checkInInput">Check In</label>
+          <input type="date" id="checkInInput" name="checkInDate" />
+          <label for="checkOutInput">Check Out</label>
+          <input type="date" id="checkOutInput" name="checkOutDate" />
+          <label for="nightStayInput">Number of Nights</label>
+          <input type="number" id="nightStayInput" name="nightStay" min="1" max="28"/>
+          <label for="numberOfAdults">Number of Adults</label>
+          <input type="number" id="adults" name="nightStay" min="1" max="4"/>
+          <label for="numberOfChildren">Number of Children</label>
+          <input type="number" id="kids" name="nightStay" min="0" max="4"/>
+          <fieldset>
+            <legend>Room Type</legend>
+            <input type="radio" id="queenRadio" name="roomType" />
+            <label for="queenRadio">Queen Room</label>
+            <input type="radio" id="kingRadio" name="roomType" value="king" />
+            <label for="kingRadio">King Room</label>
+            <input type="radio" id="suiteRadio" name="roomType" value="suite" />
+            <label for="suiteRadio">2-Bedroom Suite</label>
+         </fieldset>
+          <fieldset>
+            <legend>Discount</legend>
+            <input type="radio" id="seniorDiscount" />
+            <label for="seniorRadio">AAA / Senior (10%)</label>
+            <input type="radio" id="vetDiscount" />
+            <label for="vetRadio">Military (20%)</label>
+          </fieldset>
+          <button id="book-submit-btn" type="button">
+            Estimiate Total Cost
+          </button>
+          <table class="roomEstimate">
+            <tbody>
+              <tr>
+                <td>Original Room Cost</td>
+                <td id="originalCost">$0.00</td>
+              </tr>
+              <tr>
+                <td>Discount Type</td>
+                <td id="discountType">$0.00</td>
+              </tr>
+              <tr>
+                <td>Discounted Room</td>
+                <td id="roomDiscount">$0.00</td>
+              </tr>
+              <tr>
+                <td>Tax</td>
+                <td id="tax">$0.00</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td>Total due:</td>
+                <td>$0.00</td>
+              </tr>
+            </tfoot>
+          </table>
+        </form>
+      </article>
+    </main>
+    <script src="./roomService.js"></script>
+  </body>
 </html>

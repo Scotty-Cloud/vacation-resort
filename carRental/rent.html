@@ -4,14 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Car Rental</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css"/>
   </head>
   <body>
     <main>
       <article>
-        <h3>ACME Car Rental</h3>
+        <h3>Enterprise Rent-A-Car</h3>
         <form>
           <label for="pickupDateInput">Pickup date:</label>
           <input type="date" id="pickupDateInput" />
@@ -20,7 +18,7 @@
           <fieldset>
             <legend>Options</legend>
             <label for="tollTagCheckbox">
-              <input type="checkbox" id="tollTagCheckbox" />
+            <input type="checkbox" id="tollTagCheckbox" />
               Electronic Toll Tag ($3.95/day)
             </label>
             <label for="gpsCheckbox">
@@ -44,21 +42,21 @@
             <tbody>
               <tr>
                 <td>Car rental:</td>
-                <td id="carRentalTotalTD">---</td>
+                <td id="carRentalTotalTD">$0.00</td>
               </tr>
               <tr>
                 <td>Options:</td>
-                <td id="optionsTotalTD">---</td>
+                <td id="optionsTotalTD">$0.00</td>
               </tr>
               <tr>
                 <td>Under 25 surcharge:</td>
-                <td id="under25TotalTD">---</td>
+                <td id="under25TotalTD">$0.00</td>
               </tr>
             </tbody>
             <tfoot>
               <tr>
                 <td>Total due:</td>
-                <td>---</td>
+                <td>$0.00</td>
               </tr>
             </tfoot>
           </table>
