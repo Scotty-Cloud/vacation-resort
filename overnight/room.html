@@ -3,76 +3,90 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Room Bookings</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css"/>
+    <link
+      rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css"/>
+    <title>Bookings</title>
   </head>
   <body>
+    <header>
+      <nav></nav>
+    </header>
     <main>
       <article>
-        <h3>Room Booking</h3>
-        <form class="bookInfo">
+        <form>
+          <h1>Booking Form</h1>
           <label for="nameInput">Name</label>
-          <input type="text" id="nameInput" name="customerName" />
+          <input type="text" id="nameInput" />
           <label for="emailInput">Email address</label>
-          <input type="email" id="emailInput" name="customerEmail" />
-          <label for="checkInInput">Check In</label>
-          <input type="date" id="checkInInput" name="checkInDate" />
-          <label for="checkOutInput">Check Out</label>
-          <input type="date" id="checkOutInput" name="checkOutDate" />
-          <label for="nightStayInput">Number of Nights</label>
-          <input type="number" id="nightStayInput" name="nightStay" min="1" max="28"/>
-          <label for="numberOfAdults">Number of Adults</label>
-          <input type="number" id="adults" name="nightStay" min="1" max="4"/>
-          <label for="numberOfChildren">Number of Children</label>
-          <input type="number" id="kids" name="nightStay" min="0" max="4"/>
+          <input type="email" id="emailInput" aria-describedby="emailHelp" />
+          <label for="checkInDate">Check In</label>
+          <input type="date" id="checkInDate" />
+          <label for="checkOutDate">Check Out</label>
+          <input type="date" id="checkOutDate" />
+          <label for="numberOfNights">Number of Nights</label>
+          <input type="number" id="numberOfNights" min="1" max="28" />
           <fieldset>
             <legend>Room Type</legend>
-            <input type="radio" id="queenRadio" name="roomType" />
-            <label for="queenRadio">Queen Room</label>
-            <input type="radio" id="kingRadio" name="roomType" value="king" />
-            <label for="kingRadio">King Room</label>
-            <input type="radio" id="suiteRadio" name="roomType" value="suite" />
-            <label for="suiteRadio">2-Bedroom Suite</label>
-         </fieldset>
-          <fieldset>
-            <legend>Discount</legend>
-            <input type="radio" id="seniorDiscount" />
-            <label for="seniorRadio">AAA / Senior (10%)</label>
-            <input type="radio" id="vetDiscount" />
-            <label for="vetRadio">Military (20%)</label>
+            <input type="radio" id="radioQueenBtn" />
+            <label for="radioQueenBtn">Queen</label>
+            <input type="radio" id="radioKingBtn" />
+            <label for="radioKingBtn">King</label>
+            <input type="radio" id="radioSuiteBtn" />
+            <label for="radioSuiteBtn">2-Bedroom Suite</label>
           </fieldset>
-          <button id="book-submit-btn" type="button">
-            Estimiate Total Cost
-          </button>
-          <table class="roomEstimate">
-            <tbody>
-              <tr>
-                <td>Original Room Cost</td>
-                <td id="originalCost">$0.00</td>
-              </tr>
-              <tr>
-                <td>Discount Type</td>
-                <td id="discountType">$0.00</td>
-              </tr>
-              <tr>
-                <td>Discounted Room</td>
-                <td id="roomDiscount">$0.00</td>
-              </tr>
-              <tr>
-                <td>Tax</td>
-                <td id="tax">$0.00</td>
-              </tr>
-            </tbody>
-            <tfoot>
-              <tr>
-                <td>Total due:</td>
-                <td>$0.00</td>
-              </tr>
-            </tfoot>
-          </table>
+          <fieldset>
+            <legend>Night Price</legend>
+            <p>$<span id="dailyNightPrice"></span></p>
+            <label for="adultAmount">Number of Adults</label>
+            <input type="number" id="adultAmount" min="1" max="4" />
+            <label for="childrenAmount">Number of Children</label>
+            <input type="number" id="childrenAmount" min="0" max="4" />
+            <p id="messageParagraph">Room Avaliable</p>
+            <legend>Discount</legend>
+            <input type="radio" name="discountRadioDefault" id="noDiscount" />
+            <label for="noDiscount">None</label>
+            <input
+              type="radio" name="discountRadioDefault" id="discountSenior" />
+            <label for="discountSenior">AAA/Senior (10%)</label>
+            <input type="radio" name="discountRadioDefault" id="discountMilitary" />
+            <label for="discountMilitary">Military (20%)</label>
+          </fieldset>
+          <button id="submitBtn" type="button">Submit</button>
+          <fieldset>
+            <h3>Estimate Stay Cost</h3>
+            <table class="totals">
+              <tbody>
+                <tr>
+                  <td>Original Room Cost:</td>
+                  <td id="originalCost">$ 0.00</td>
+                </tr>
+                <tr>
+                  <td>Discount Type:</td>
+                  <td id="discountTypeInput">$ 0.00</td>
+                </tr>
+                <tr>
+                  <td>Discounted Room Cost:</td>
+                  <td id="roomDiscount">$ 0.00</td>
+                </tr>
+                <tr>
+                  <td>Tax</td>
+                  <td id="tax">$ 0.00</td>
+                </tr>
+                <tr></tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td>Total Cost of the stay</td>
+                  <td id="costTotal">$ 0.00</td>
+                </tr>
+              </tfoot>
+            </table>
+            <button type="button">Confirm</button>
+          </fieldset>
         </form>
       </article>
     </main>
+    <footer></footer>
     <script src="./roomService.js"></script>
   </body>
 </html>
