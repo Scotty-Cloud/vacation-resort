@@ -2,9 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css"/>
     <title>Bookings</title>
   </head>
   <body>
@@ -18,7 +17,7 @@
           <label for="nameInput">Name</label>
           <input type="text" id="nameInput" />
           <label for="emailInput">Email address</label>
-          <input type="email" id="emailInput" aria-describedby="emailHelp" />
+          <input type="email" id="emailInput"/>
           <label for="checkInDate">Check In</label>
           <input type="date" id="checkInDate" />
           <label for="checkOutDate">Check Out</label>
@@ -38,17 +37,17 @@
             <legend>Night Price</legend>
             <p>$<span id="dailyNightPrice"></span></p>
             <label for="adultAmount">Number of Adults</label>
-            <input type="number" id="adultAmount" min="1" max="4" />
+            <input type="number" id="adultAmount" min="1" max="4"/>
             <label for="childrenAmount">Number of Children</label>
-            <input type="number" id="childrenAmount" min="0" max="4" />
+            <input type="number" id="childrenAmount" min="0" max="4"/>
             <p id="messageParagraph">Room Avaliable</p>
             <legend>Discount</legend>
-            <input type="radio" name="discountRadioDefault" id="noDiscount" />
+            <input type="radio" name="discountRadioDefault" id="noDiscount"/>
             <label for="noDiscount">None</label>
             <input
-              type="radio" name="discountRadioDefault" id="discountSenior" />
+              type="radio" name="discountRadioDefault" id="discountSenior"/>
             <label for="discountSenior">AAA/Senior (10%)</label>
-            <input type="radio" name="discountRadioDefault" id="discountMilitary" />
+            <input type="radio" name="discountRadioDefault" id="discountMilitary"/>
             <label for="discountMilitary">Military (20%)</label>
           </fieldset>
           <button id="submitBtn" type="button">Submit</button>
@@ -72,7 +71,6 @@
                   <td>Tax</td>
                   <td id="tax">$ 0.00</td>
                 </tr>
-                <tr></tr>
               </tbody>
               <tfoot>
                 <tr>
